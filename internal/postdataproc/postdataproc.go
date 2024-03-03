@@ -2,7 +2,7 @@ package postdataproc
 
 import (
 	"github.com/ushanovsn/metrics/internal/storage"
-	"fmt"
+	//"fmt"
 	"strings"
 	"strconv"
 )
@@ -35,14 +35,14 @@ func UsePOSTData(post []string) ProcError {
 			case "gauge":
 				if v, err := strconv.ParseFloat(mVal, 64); err == nil {
 					storage.Metr.SetGauge(mName, v)
-					fmt.Printf("Received gauge: %s, value: %v\n", mName, v)
+					//fmt.Printf("Received gauge: %s, value: %v\n", mName, v)
 				} else {
 					procErr = ProcWrongValue
 				}
 			case "counter":
 				if v, err := strconv.ParseInt(mVal, 10, 64); err == nil {
 					storage.Metr.SetCounter(mName, v)
-					fmt.Printf("Received counter: %s, value: %v\n", mName, v)
+					//fmt.Printf("Received counter: %s, value: %v\n", mName, v)
 				} else {
 					procErr = ProcWrongValue
 				}

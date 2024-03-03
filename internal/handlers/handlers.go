@@ -10,7 +10,8 @@ import (
 
 // start page if it needed
 func startPage(res http.ResponseWriter, req *http.Request) {
-	res.Write([]byte("Metrics holder server"))
+	res.WriteHeader(http.StatusBadRequest)
+	//res.Write([]byte("Metrics holder server"))
 }
 
 
@@ -25,7 +26,7 @@ func updatePage(res http.ResponseWriter, req *http.Request) {
 	if req.Method == http.MethodPost {
 
 		// check content type
-		if true /*req.Header.Values("Content-Type") != nil && req.Header.Values("Content-Type")[0] == "text/plain"*/ {
+		if true /* req.Header.Values("Content-Type") != nil && req.Header.Values("Content-Type")[0] == "text/plain" */ {
 			// processing received data
 			err := postdataproc.UsePOSTData(strings.Split(req.URL.Path, "/"))
 			// check processing errors
@@ -54,6 +55,5 @@ func updatePage(res http.ResponseWriter, req *http.Request) {
 
 
 	res.WriteHeader(header)
-	//res.Write(msg)
 	fmt.Printf("http msg: %s\n", msg)
 }
