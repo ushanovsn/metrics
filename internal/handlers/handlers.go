@@ -26,7 +26,15 @@ func updatePage(res http.ResponseWriter, req *http.Request) {
 	if req.Method == http.MethodPost {
 
 		// check content type
-		if true /* req.Header.Values("Content-Type") != nil && req.Header.Values("Content-Type")[0] == "text/plain" */ {
+		var rightContentT = true
+		for i, v := range req.Header {
+			if i == "Content-Type" && v[0] != "text/plain" {
+				rightContentT = false
+			}
+		}
+
+
+		if rightContentT {
 			// processing received data
 			err := postdataproc.UsePOSTData(strings.Split(req.URL.Path, "/"))
 			// check processing errors
