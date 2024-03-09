@@ -17,7 +17,7 @@ func TestServerMux(t *testing.T) {
 		mName   string
 		mValueF float64
 		mValueI int64
-		is_ok_val bool
+		isOkVal bool
 	}
 
 	tests := []struct {
@@ -33,7 +33,7 @@ func TestServerMux(t *testing.T) {
 				mType: "gauge",
 				mName: "testGauge1",
 				mValueF: 12.0,
-				is_ok_val: true,
+				isOkVal: true,
 			},
 		},
 		{
@@ -44,7 +44,7 @@ func TestServerMux(t *testing.T) {
 				mType: "counter",
 				mName: "testCounter1",
 				mValueI: 13,
-				is_ok_val: true,
+				isOkVal: true,
 			},
 		},
 		{
@@ -55,7 +55,7 @@ func TestServerMux(t *testing.T) {
 				mType: "gauge",
 				mName: "testGauge1",
 				mValueF: 13.0,
-				is_ok_val: true,
+				isOkVal: true,
 			},
 		},
 		{
@@ -66,7 +66,7 @@ func TestServerMux(t *testing.T) {
 				mType: "counter",
 				mName: "testCounter1",
 				mValueI: 25,
-				is_ok_val: true,
+				isOkVal: true,
 			},
 		},
 		{
@@ -77,7 +77,7 @@ func TestServerMux(t *testing.T) {
 				mType: "gauge",
 				mName: "testGauge2",
 				mValueF:0.0,
-				is_ok_val: false,
+				isOkVal: false,
 			},
 		},
 		{
@@ -88,7 +88,7 @@ func TestServerMux(t *testing.T) {
 				mType: "counter",
 				mName: "testCounter2",
 				mValueI: 0,
-				is_ok_val: false,
+				isOkVal: false,
 			},
 		},
 		{
@@ -99,7 +99,7 @@ func TestServerMux(t *testing.T) {
 				mType: "gauge",
 				mName: "",
 				mValueF: 0.0,
-				is_ok_val: false,
+				isOkVal: false,
 			},
 		},
 		{
@@ -110,7 +110,7 @@ func TestServerMux(t *testing.T) {
 				mType: "counter",
 				mName: "",
 				mValueI: 0,
-				is_ok_val: false,
+				isOkVal: false,
 			},
 		},
 	}
@@ -131,11 +131,11 @@ func TestServerMux(t *testing.T) {
 			case "gauge":
 				val, ok_res := storage.Metr.GetGauge(tt.want.mName)
 				assert.Equal(t, tt.want.mValueF, val)
-				assert.Equal(t, tt.want.is_ok_val, ok_res)	
+				assert.Equal(t, tt.want.isOkVal, ok_res)	
 			case "counter":
 				val, ok_res := storage.Metr.GetCounter(tt.want.mName)
 				assert.Equal(t, tt.want.mValueI, val)
-				assert.Equal(t, tt.want.is_ok_val, ok_res)	
+				assert.Equal(t, tt.want.isOkVal, ok_res)	
 			}
 
 		})
