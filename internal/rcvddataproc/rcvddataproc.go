@@ -1,8 +1,8 @@
-package postdataproc
+package rcvddataproc
 
 import (
 	"github.com/ushanovsn/metrics/internal/storage"
-	//"fmt"
+	"fmt"
 	"strings"
 	"strconv"
 )
@@ -19,6 +19,8 @@ const (
 
 // process data, what received by HTTP POST 
 func UsePOSTData(post []string) ProcError {
+	fmt.Printf("Received POST: %v\n", post)
+
 	procErr := ProcNoErrors
 	
 	if len(post) == 3 {

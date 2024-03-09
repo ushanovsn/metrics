@@ -3,10 +3,23 @@ package handlers
 import (
 	"net/http"
 	"strings"
-	"github.com/ushanovsn/metrics/internal/postdataproc"
+	"github.com/ushanovsn/metrics/internal/rcvddataproc"
 	"fmt"
 )
 
+
+func ServerMux() *http.ServeMux {
+
+	mux := http.NewServeMux()
+
+	mux.HandleFunc("/", startPage)
+
+	mux.Handle("/update/", http.StripPrefix("/update/", http.HandlerFunc(updatePage)))
+
+
+
+	return mux
+}
 
 // start page if it needed
 func startPage(res http.ResponseWriter, req *http.Request) {
@@ -36,17 +49,17 @@ func updatePage(res http.ResponseWriter, req *http.Request) {
 
 		if rightContentT {
 			// processing received data
-			err := postdataproc.UsePOSTData(strings.Split(req.URL.Path, "/"))
+			err := rcvddataproc.UsePOSTData(strings.Split(req.URL.Path, "/"))
 			// check processing errors
-			if err == postdataproc.ProcNoErrors {
+			if err == rcvddataproc.ProcNoErrors {
 				header = http.StatusOK
 			} else {
 				switch err {
-				case postdataproc.ProcWrongType:
+				case rcvddataproc.ProcWrongType:
 					msg = []byte("Wrong metric type")
-				case postdataproc.ProcWrongValue:
+				case rcvddataproc.ProcWrongValue:
 					msg = []byte("Wrong metric value")
-				case postdataproc.ProcWrongName:
+				case rcvddataproc.ProcWrongName:
 					header = http.StatusNotFound
 					msg = []byte("Can't find metric name")
 				default:
