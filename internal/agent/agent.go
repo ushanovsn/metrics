@@ -60,7 +60,8 @@ func StartAgent() {
 				r.Header.Add("Content-Type", "text/plain")
 
 				// execute POST request
-				_, err = client.Do(r)
+				resp, err := client.Do(r)
+				resp.Body.Close()
 				if err != nil {
 					fmt.Printf("error while requesting: %s \n", err)
 				}

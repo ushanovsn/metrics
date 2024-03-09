@@ -129,15 +129,16 @@ func TestServerMux(t *testing.T) {
 
 			switch tt.want.mType {
 			case "gauge":
-				val, ok_res := storage.Metr.GetGauge(tt.want.mName)
+				val, okRes := storage.Metr.GetGauge(tt.want.mName)
 				assert.Equal(t, tt.want.mValueF, val)
-				assert.Equal(t, tt.want.isOkVal, ok_res)	
+				assert.Equal(t, tt.want.isOkVal, okRes)	
 			case "counter":
-				val, ok_res := storage.Metr.GetCounter(tt.want.mName)
+				val, okRes := storage.Metr.GetCounter(tt.want.mName)
 				assert.Equal(t, tt.want.mValueI, val)
-				assert.Equal(t, tt.want.isOkVal, ok_res)	
+				assert.Equal(t, tt.want.isOkVal, okRes)	
 			}
 
+			res.Body.Close()
 		})
 	}
 }
