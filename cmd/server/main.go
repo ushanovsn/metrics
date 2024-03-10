@@ -9,7 +9,8 @@ import (
 func main() {
 	fmt.Printf("Server starting...\n")
 
-	server.FlagInit()
+	server.InitFlag()
+	server.InitEnv()
 
     if err := server.ServerRun(); err != nil {
         panic(err)
