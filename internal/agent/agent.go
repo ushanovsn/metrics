@@ -3,6 +3,7 @@ package agent
 import (
 	"fmt"
 	"github.com/ushanovsn/metrics/internal/metricsproc"
+	"github.com/ushanovsn/metrics/internal/options"
 	"net/http"
 	"time"
 )
@@ -20,16 +21,13 @@ func AgentRun() error {
 	var minTimer int
 	var maxTimer int
 
-	if FlagParam.ReportInterval < FlagParam.PollInterval {
-		minTimer = FlagParam.ReportInterval
-		maxTimer = FlagParam.PollInterval
+	if options.AgentOpt.ReportInterval < options.AgentOpt.PollInterval {
+		minTimer = options.AgentOpt.ReportInterval
+		maxTimer = options.AgentOpt.PollInterval
 	} else {
-		minTimer = FlagParam.PollInterval
-		maxTimer = FlagParam.ReportInterval
+		minTimer = options.AgentOpt.PollInterval
+		maxTimer = options.AgentOpt.ReportInterval
 	}
-
-	fmt.Printf("FlagParam: %v\n", FlagParam)
-	fmt.Printf("minTimer: %v, maxTimer: %v\n", minTimer, maxTimer)
 
 	for {
 
@@ -51,9 +49,6 @@ func AgentRun() error {
 			timer = sleepTime
 		}
 
-		//fmt.Printf("minTimer: %v, maxTimer: %v\n", minTimer, maxTimer)
-		fmt.Printf("sleepTime: %v, timer: %v\n", sleepTime, timer)
-
 		// waiting...
 		time.Sleep(time.Duration(sleepTime) * time.Second)
 
@@ -71,14 +66,14 @@ func AgentRun() error {
 		} else {
 			if timer >= minTimer && timer < maxTimer {
 				// tick of minTimer
-				if minTimer == FlagParam.PollInterval {
+				if minTimer == options.AgentOpt.PollInterval {
 					err = AgentCheckMetrics()
 				} else {
 					err = AgentSendMetrics()
 				}
 			} else {
 				// tick of maxTimer
-				if maxTimer == FlagParam.PollInterval {
+				if maxTimer == options.AgentOpt.PollInterval {
 					err = AgentCheckMetrics()
 				} else {
 					err = AgentSendMetrics()
@@ -92,14 +87,15 @@ func AgentRun() error {
 	}
 }
 
+
 func AgentCheckMetrics() error {
 
 	// updating metrics
 	metricsproc.MetrCollect()
 
-	fmt.Printf("checked!\n")
 	return nil
 }
+
 
 func AgentSendMetrics() error {
 
@@ -116,10 +112,10 @@ func AgentSendMetrics() error {
 				postPath += "/"
 			}
 
-			//fmt.Printf("* send path: %s\n", postPath)
+			fmt.Printf("* send path: %s\n", postPath)
 
 			// POST request with metric
-			r, err := http.NewRequest("POST", fmt.Sprintf("http://%s/update%s", FlagParam.Net.String(), postPath), nil)
+			r, err := http.NewRequest("POST", fmt.Sprintf("http://%s/update%s", options.AgentOpt.Net.String(), postPath), nil)
 			if err != nil {
 				panic(err)
 			}
@@ -137,6 +133,5 @@ func AgentSendMetrics() error {
 		}
 
 	}
-	fmt.Printf("sended!\n")
 	return nil
 }

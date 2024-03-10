@@ -4,11 +4,12 @@ import (
 	"net/http"
 	"github.com/go-chi/chi/v5"
 	hnd "github.com/ushanovsn/metrics/internal/handlers"
+	"github.com/ushanovsn/metrics/internal/options"
 )
 
 
 func ServerRun() error {
-	return http.ListenAndServe(FlagParam.Net.String(), ServerMux())
+	return http.ListenAndServe(options.ServerOpt.Net.String(), ServerMux())
 }
 
 func ServerMux() *chi.Mux {

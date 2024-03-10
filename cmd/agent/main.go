@@ -9,7 +9,8 @@ import (
 func main() {
 	fmt.Printf("Starting client \n")
 
-	agent.FlagInit()
+	agent.InitFlag()
+	agent.InitEnv()
 
     if err := agent.AgentRun(); err != nil {
         panic(err)
