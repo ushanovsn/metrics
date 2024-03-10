@@ -95,7 +95,7 @@ func UpdatePageM(res http.ResponseWriter, req *http.Request) {
 
 
 		if rightContentT {
-			var rcvdData []string = []string{
+			rcvdData := []string{
 				chi.URLParam(req, "mType"),
 				chi.URLParam(req, "mName"),
 				chi.URLParam(req, "mValue"),
