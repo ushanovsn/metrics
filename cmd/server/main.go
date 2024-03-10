@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 	"net/http"
-	hnd "github.com/ushanovsn/metrics/internal/handlers"
+	"github.com/ushanovsn/metrics/internal/server"
 )
 
 
 func main() {
 	fmt.Printf("Server starting...\n")
 
-	err := http.ListenAndServe(":8080", hnd.ServerMux())
+	err := http.ListenAndServe(":8080", server.ServerMux())
 
 	if err != nil {
 		panic(err)

@@ -2,34 +2,81 @@ package handlers
 
 import (
 	"net/http"
-	"strings"
 	"github.com/ushanovsn/metrics/internal/rcvddataproc"
+	"github.com/ushanovsn/metrics/internal/storage"
 	"fmt"
+	"strings"
+	"github.com/go-chi/chi/v5"
+	"html/template"
 )
 
 
-func ServerMux() *http.ServeMux {
+// start page 
+func StartPage(res http.ResponseWriter, req *http.Request) {
+	header := http.StatusOK
 
-	mux := http.NewServeMux()
+	res.Header().Add("Content-Type", "text/html")
 
-	mux.HandleFunc("/", startPage)
+	 data := struct { 
+		Title string 
+		MetricsG []string
+		MetricsC []string
+	}{
+		Title: "Metrics list",
+		MetricsG: storage.Metr.GetGaugeList(),
+		MetricsC: storage.Metr.GetCounterList(),
+	}
 
-	mux.Handle("/update/", http.StripPrefix("/update/", http.HandlerFunc(updatePage)))
+	tmpl, err := template.ParseFiles("./static/htmltemplates/main_page_template.html")
+	if err != nil {
+		fmt.Printf("error while loading template: %v\n", err)
+		header = http.StatusInternalServerError
+		res.WriteHeader(header)
+		return
+	}
 
 
+	res.WriteHeader(header)
+	err = tmpl.Execute(res, data)
 
-	return mux
+	if err != nil {
+		fmt.Println("Error executing template:", err) 
+		return
+	}
 }
 
-// start page if it needed
-func startPage(res http.ResponseWriter, req *http.Request) {
-	res.WriteHeader(http.StatusBadRequest)
-	//res.Write([]byte("Metrics holder server"))
-}
+// metric page 
+func GetPageM(res http.ResponseWriter, req *http.Request) {
+	var msg []byte
+	header := http.StatusNotFound
+	res.Header().Add("Content-Type", "text/plain")
 
+	if chi.URLParam(req, "mName") == "" {
+		res.WriteHeader(header)
+		return
+	}
+
+	switch strings.ToLower(chi.URLParam(req, "mType")) {
+	case "gauge":
+		if v, ok := storage.Metr.GetGauge(chi.URLParam(req, "mName")); ok {
+			header = http.StatusOK
+			msg = []byte(fmt.Sprint(v))
+		}
+	case "counter":
+		if v, ok := storage.Metr.GetCounter(chi.URLParam(req, "mName")); ok {
+			header = http.StatusOK
+			msg = []byte(fmt.Sprint(v))
+		}
+	}
+
+	res.WriteHeader(header)
+	if len(msg) > 0 {
+		res.Write(msg)
+	}
+}
 
 // processing all received data by "update" address
-func updatePage(res http.ResponseWriter, req *http.Request) {
+func UpdatePageM(res http.ResponseWriter, req *http.Request) {
 	// post message if needed
 	var msg []byte
 	// default header = badRequest 
@@ -48,8 +95,14 @@ func updatePage(res http.ResponseWriter, req *http.Request) {
 
 
 		if rightContentT {
+			var rcvdData []string = []string{
+				chi.URLParam(req, "mType"),
+				chi.URLParam(req, "mName"),
+				chi.URLParam(req, "mValue"),
+			}
+
 			// processing received data
-			err := rcvddataproc.UsePOSTData(strings.Split(req.URL.Path, "/"))
+			err := rcvddataproc.UsePOSTData(rcvdData)
 			// check processing errors
 			if err == rcvddataproc.ProcNoErrors {
 				header = http.StatusOK
@@ -74,7 +127,8 @@ func updatePage(res http.ResponseWriter, req *http.Request) {
 		msg = []byte("Only POST accepted")
 	}
 
-
 	res.WriteHeader(header)
-	fmt.Printf("http msg: %s\n", msg)
+	if len(msg) > 0 {
+		fmt.Printf("http msg: %s\n", msg)
+	}
 }
