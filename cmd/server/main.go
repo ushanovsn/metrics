@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 	"github.com/ushanovsn/metrics/internal/server"
 )
 
@@ -10,11 +9,10 @@ import (
 func main() {
 	fmt.Printf("Server starting...\n")
 
-	err := http.ListenAndServe(":8080", server.ServerMux())
+	server.FlagInit()
 
-	if err != nil {
-		panic(err)
-	}
-
+    if err := server.ServerRun(); err != nil {
+        panic(err)
+    }
 	fmt.Printf("Server stopped! \n")
 }

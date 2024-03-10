@@ -1,11 +1,15 @@
 package server
 
 import (
-	//"net/http"
+	"net/http"
 	"github.com/go-chi/chi/v5"
 	hnd "github.com/ushanovsn/metrics/internal/handlers"
 )
 
+
+func ServerRun() error {
+	return http.ListenAndServe(FlagParam.Net.String(), ServerMux())
+}
 
 func ServerMux() *chi.Mux {
 	r := chi.NewRouter()
