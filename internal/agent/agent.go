@@ -117,7 +117,7 @@ func AgentSendMetrics() error {
 			// POST request with metric
 			r, err := http.NewRequest("POST", fmt.Sprintf("http://%s/update%s", options.AgentOpt.Net.String(), postPath), nil)
 			if err != nil {
-				panic(err)
+				return err
 			}
 
 			// add header (optional)
