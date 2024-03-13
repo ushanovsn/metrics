@@ -12,8 +12,8 @@ func main() {
 	server.InitFlag()
 	server.InitEnv()
 
-    if err := server.ServerRun(); err != nil {
-        panic(err)
-    }
+	if err := server.ServerRun(); err != nil {
+		panic(err)
+	}
 	fmt.Printf("Server stopped! \n")
 }

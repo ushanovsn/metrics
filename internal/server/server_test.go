@@ -12,9 +12,9 @@ import (
 
 func TestServerMux(t *testing.T) {
 	type want struct {
-		code    int
-		mType   string
-		mName   string
+		code	int
+		mType 	string
+		mName	string
 		mValueF float64
 		mValueI int64
 		isOkVal bool

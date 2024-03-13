@@ -34,8 +34,8 @@ func runtimeCollect() {
 	//read metrics
 	runtime.ReadMemStats(&rt)
 
-    v := reflect.ValueOf(rt)
-    for i := 0; i < v.NumField(); i++ {
+	v := reflect.ValueOf(rt)
+	for i := 0; i < v.NumField(); i++ {
 		if en, ok := mNames[v.Type().Field(i).Name]; ok && en {
 			// ckeck type of metric value
 			switch v.Type().Field(i).Type.String() {
@@ -50,7 +50,7 @@ func runtimeCollect() {
 				MetrStor["gauge"][v.Type().Field(i).Name] = Metrics{TypeM: "float64", ValueF: v.Field(i).Float()}
 			}
 		}
-    }
+	}
 }
 
 

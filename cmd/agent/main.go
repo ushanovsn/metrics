@@ -12,9 +12,9 @@ func main() {
 	agent.InitFlag()
 	agent.InitEnv()
 
-    if err := agent.AgentRun(); err != nil {
-        panic(err)
-    }
+	if err := agent.AgentRun(); err != nil {
+		panic(err)
+	}
 	
 	fmt.Printf("Agent stopped! \n")
 }
