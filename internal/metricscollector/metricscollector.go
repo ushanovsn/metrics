@@ -1,10 +1,11 @@
 package metricscollector
 
 import (
-	"runtime"
-	"reflect"
-	"math/rand"
 	"fmt"
+	"math/rand"
+	"reflect"
+	"runtime"
+	"strings"
 )
 
 // type for metrics param
@@ -23,21 +24,22 @@ var MetrStor map[string]map[string]metrics = map[string]map[string]metrics{
 
 func GetMetricsList() []string {
 	list := make([]string, 0, len(mGaugeNames) + len(mCounterNames) + len(mRandomNames))
+	var elem strings.Builder
 
 	for t, v := range MetrStor {
 		// check metrics
 		for n, m := range v {
-			elem := "/" + t + "/" + n
+			elem.WriteString("/" + t + "/" + n)
 			switch m.typeM {
 			case "float64":
-				elem += "/" + fmt.Sprint(m.valueF)
+				elem.WriteString("/" + fmt.Sprint(m.valueF))
 			case "int64":
-				elem += "/" + fmt.Sprint(m.valueI)
+				elem.WriteString("/" + fmt.Sprint(m.valueI))
 			default:
-				elem += "/"
+				elem.WriteString("/")
 			}
 
-			list = append(list, elem)
+			list = append(list, elem.String())
 		}
 	}
 	return list
