@@ -1,7 +1,7 @@
-package metricsproc
+package metricscollector
 
-// used parameters names
-var mNames map[string]bool = map[string]bool {
+// used gauge parameters names
+var mGaugeNames map[string]bool = map[string]bool {
 	"Alloc": true,
 	"BuckHashSys": true,
 	"Frees": true,
@@ -30,3 +30,19 @@ var mNames map[string]bool = map[string]bool {
 	"Sys": true,
 	"TotalAlloc": true,
 }
+
+
+
+// used counters parameters names
+var mCounterNames map[string]bool = map[string]bool {
+	"PollCount": true,
+}
+
+
+
+// used gauge randoms parameters names
+var mRandomNames map[string]bool = map[string]bool {
+	"RandomValue": true,
+}
+
+

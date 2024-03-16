@@ -13,8 +13,8 @@ func main() {
 	server.InitEnv()
 
 	if err := server.ServerRun(); err != nil {
-		fmt.Printf("Server stopping with error: %s \n", err)
+		fmt.Printf("Server stopping with error: %s\n", err)
 	}
 
-	fmt.Printf("Server stopped! \n")
+	fmt.Printf("Server stopped!\n")
 }

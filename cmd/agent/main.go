@@ -13,8 +13,8 @@ func main() {
 	agent.InitEnv()
 
 	if err := agent.AgentRun(); err != nil {
-		fmt.Printf("Agent stopping with error: %s \n", err)
+		fmt.Printf("Agent stopping with error: %s\n", err)
 	}
 
-	fmt.Printf("Agent stopped! \n")
+	fmt.Printf("Agent stopped!\n")
 }

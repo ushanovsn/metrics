@@ -7,15 +7,15 @@ import (
 
 // storage of metrics
 type MemStorage struct {
-	metrics Metrics
+	metrics metrics
 }
 
 // metrics values
-type Metrics struct {
+type metrics struct {
 	// values of gauge
-	Gauge map[string]float64
+	gauge map[string]float64
 	// values of counter
-	Counter map[string]int64
+	counter map[string]int64
 }
 
 // storage interface
@@ -28,34 +28,34 @@ type Repositories interface {
 
 // init metric storage (at this time)
 var Metr MemStorage = MemStorage{
-	metrics: Metrics{
-		Gauge: make(map[string]float64),
-		Counter: make(map[string]int64),
+	metrics: metrics{
+		gauge: make(map[string]float64),
+		counter: make(map[string]int64),
 	},
 }
 
 
 // add or update of gauge metric
 func (ms *MemStorage) SetGauge(name string, val float64) {
-	ms.metrics.Gauge[name] = val
+	ms.metrics.gauge[name] = val
 }
 
 
 // add or update of counter metric
 func (ms *MemStorage) SetCounter(name string, val int64) {
-	ms.metrics.Counter[name] += val
+	ms.metrics.counter[name] += val
 }
 
 // get of gauge metric
 func (ms *MemStorage) GetGauge(name string) (float64, bool) {
-	v, ok := ms.metrics.Gauge[name]
+	v, ok := ms.metrics.gauge[name]
 	return v, ok
 }
 
 // get of gauge metrics list
 func (ms *MemStorage) GetGaugeList() []string {
 	var list []string
-	for k, v := range ms.metrics.Gauge {
+	for k, v := range ms.metrics.gauge {
 		list = append(list, fmt.Sprintf("Name: %-10s,\tValue: %v", k, v))
 	}
 	sort.Strings(sort.StringSlice(list))
@@ -65,14 +65,14 @@ func (ms *MemStorage) GetGaugeList() []string {
 
 // get of counter metric
 func (ms *MemStorage) GetCounter(name string) (int64, bool) {
-	v, ok := ms.metrics.Counter[name]
+	v, ok := ms.metrics.counter[name]
 	return v, ok
 }
 
 // get of counter metrics list
 func (ms *MemStorage) GetCounterList() []string {
 	var list []string
-	for k, v := range ms.metrics.Counter {
+	for k, v := range ms.metrics.counter {
 		list = append(list, fmt.Sprintf("Name: %-10s,\tValue: %v", k, v))
 	}
 	sort.Strings(sort.StringSlice(list))

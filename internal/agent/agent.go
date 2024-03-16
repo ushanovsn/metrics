@@ -1,18 +1,16 @@
 package agent
 
 import (
+	"log"
 	"fmt"
-	"github.com/ushanovsn/metrics/internal/metricsproc"
+	"github.com/ushanovsn/metrics/internal/metricscollector"
 	"github.com/ushanovsn/metrics/internal/options"
 	"net/http"
 	"time"
 )
 
-var client *http.Client
 
 func AgentRun() error {
-
-	client = &http.Client{}
 
 	var err error
 	var timer int
@@ -21,12 +19,17 @@ func AgentRun() error {
 	var minTimer int
 	var maxTimer int
 
-	if options.AgentOpt.ReportInterval < options.AgentOpt.PollInterval {
-		minTimer = options.AgentOpt.ReportInterval
-		maxTimer = options.AgentOpt.PollInterval
+	repInt := options.AgentOpt.GetRepInt()
+	pollInt := options.AgentOpt.GetPollInt()
+
+	log.Printf("Agent run with poll interval %v and report interval %v\n", pollInt, repInt)
+
+	if repInt < pollInt {
+		minTimer = repInt
+		maxTimer = pollInt
 	} else {
-		minTimer = options.AgentOpt.PollInterval
-		maxTimer = options.AgentOpt.ReportInterval
+		minTimer = pollInt
+		maxTimer = repInt
 	}
 
 	for {
@@ -53,7 +56,7 @@ func AgentRun() error {
 		time.Sleep(time.Duration(sleepTime) * time.Second)
 
 		if minTimer == maxTimer ||(timer == maxTimer && maxTimer % minTimer == 0) {
-			err = AgentCheckMetrics()
+			metricscollector.MetrCollect()
 			if err != nil {
 				return err
 			}
@@ -66,15 +69,15 @@ func AgentRun() error {
 		} else {
 			if timer >= minTimer && timer < maxTimer {
 				// tick of minTimer
-				if minTimer == options.AgentOpt.PollInterval {
-					err = AgentCheckMetrics()
+				if minTimer == pollInt {
+					metricscollector.MetrCollect()
 				} else {
 					err = AgentSendMetrics()
 				}
 			} else {
 				// tick of maxTimer
-				if maxTimer == options.AgentOpt.PollInterval {
-					err = AgentCheckMetrics()
+				if maxTimer == pollInt {
+					metricscollector.MetrCollect()
 				} else {
 					err = AgentSendMetrics()
 				}
@@ -88,50 +91,35 @@ func AgentRun() error {
 }
 
 
-func AgentCheckMetrics() error {
-
-	// updating metrics
-	metricsproc.MetrCollect()
-
-	return nil
-}
-
 
 func AgentSendMetrics() error {
+	client := &http.Client{}
 
-	for t, v := range metricsproc.MetrStor {
-		// check metrics
-		for n, m := range v {
-			postPath := "/" + t + "/" + n
-			switch m.TypeM {
-			case "float64":
-				postPath += "/" + fmt.Sprint(m.ValueF)
-			case "int64":
-				postPath += "/" + fmt.Sprint(m.ValueI)
-			default:
-				postPath += "/"
-			}
+	log.Printf("send: %v\n", metricscollector.GetMetricsList())
 
-			fmt.Printf("* send path: %s\n", postPath)
+	for _, val := range metricscollector.GetMetricsList() {
 
-			// POST request with metric
-			r, err := http.NewRequest("POST", fmt.Sprintf("http://%s/update%s", options.AgentOpt.Net.String(), postPath), nil)
-			if err != nil {
-				return err
-			}
+		log.Printf("* send path: %s\n", val)
 
-			// add header (optional)
-			r.Header.Add("Content-Type", "text/plain")
+		// POST request with metric
+		r, err := http.NewRequest("POST", fmt.Sprintf("http://%s/update%s", options.AgentOpt.Net.String(), val), nil)
+		if err != nil {
+			return err
+		}
+		
 
-			// execute POST request
-			resp, err := client.Do(r)
-			if err != nil {
-				fmt.Printf("error while requesting: %s \n", err)
-			}
+		// add header (optional)
+		r.Header.Add("Content-Type", "text/plain")
 
+		// execute POST request
+		resp, err := client.Do(r)
+
+		if err != nil {
+			log.Printf("error while requesting: \"%s\"\n", err)
+		} else {
 			resp.Body.Close()
 		}
-
+		
 	}
 	return nil
 }
