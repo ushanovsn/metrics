@@ -8,6 +8,7 @@ import (
 	"strings"
 	"github.com/go-chi/chi/v5"
 	"html/template"
+	"log"
 )
 
 
@@ -71,7 +72,10 @@ func GetPageM(res http.ResponseWriter, req *http.Request) {
 
 	res.WriteHeader(header)
 	if len(msg) > 0 {
-		res.Write(msg)
+		if _, err := res.Write(msg); err != nil {
+			log.Printf("Error while write msg: %s\n", err)
+		}
+		
 	}
 }
 

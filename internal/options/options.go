@@ -57,10 +57,11 @@ func (n *NetAddress)Set(s string) error {
 	if v, err := strconv.Atoi(vals[1]); err == nil {
 		n.host = vals[0]
 		n.port = v
-		return nil
 	} else {
 		return errors.New("wrong port value")
 	}
+
+	return nil
 }
 
 
