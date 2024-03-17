@@ -15,5 +15,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run lint
-        run: |
-          golangci-lint run ./...
+        uses: golangci/golangci-lint-action@v4
