@@ -9,7 +9,7 @@ import (
 
 func TestMemStorage_SetGauge(t *testing.T) {
 
-	var ms MemStorage = MemStorage{
+	ms := MemStorage{
 		metrics: metrics{
 			gauge:   make(map[string]float64),
 			counter: make(map[string]int64),
@@ -61,7 +61,7 @@ func TestMemStorage_SetGauge(t *testing.T) {
 
 func TestMemStorage_SetCounter(t *testing.T) {
 
-	var ms MemStorage = MemStorage{
+	ms := MemStorage{
 		metrics: metrics{
 			gauge:   make(map[string]float64),
 			counter: make(map[string]int64),
