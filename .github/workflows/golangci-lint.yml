@@ -13,11 +13,11 @@ jobs:
   golangci:
     name: lint
     runs-on: ubuntu-latest
-    container: golang:1.21
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
+          go-version: 1.21
           cache: false
       - name: Run lint
         uses: golangci/golangci-lint-action@v4
