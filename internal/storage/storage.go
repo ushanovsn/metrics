@@ -54,9 +54,9 @@ func (ms *MemStorage) GetGauge(name string) (float64, bool) {
 
 // get of gauge metrics list
 func (ms *MemStorage) GetGaugeList() []string {
-	var list []string
+	list := []string{}
 	for k, v := range ms.metrics.gauge {
-		list = append(list, fmt.Sprintf("Name: %-10s,\tValue: %v", k, v))
+		list = append(list, fmt.Sprintf("Name: %s,\tValue: %v", k, v))
 	}
 	sort.Strings(sort.StringSlice(list))
 	return list
@@ -71,9 +71,9 @@ func (ms *MemStorage) GetCounter(name string) (int64, bool) {
 
 // get of counter metrics list
 func (ms *MemStorage) GetCounterList() []string {
-	var list []string
+	list := []string{}
 	for k, v := range ms.metrics.counter {
-		list = append(list, fmt.Sprintf("Name: %-10s,\tValue: %v", k, v))
+		list = append(list, fmt.Sprintf("Name: %s,\tValue: %v", k, v))
 	}
 	sort.Strings(sort.StringSlice(list))
 	return list
