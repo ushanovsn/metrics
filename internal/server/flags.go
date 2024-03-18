@@ -6,12 +6,10 @@ import (
 )
 
 
-func InitFlag() {
-	
+func InitFlag(o *options.ServerOptions) {
+	_ = flag.Value(&o.Net)
 
-	_ = flag.Value(&options.ServerOpt.Net)
-
-	flag.Var(&options.ServerOpt.Net, "a", "Server net address host:port")
+	flag.Var(&o.Net, "a", "Server net address host:port")
 
 	flag.Parse()
 }

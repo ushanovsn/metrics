@@ -9,9 +9,6 @@ import (
 func main() {
 	fmt.Printf("Server starting...\n")
 
-	server.InitFlag()
-	server.InitEnv()
-
 	if err := server.ServerRun(); err != nil {
 		fmt.Printf("Server stopping with error: %s\n", err)
 	}

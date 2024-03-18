@@ -7,9 +7,9 @@ import (
 )
 
 
-func InitEnv() {
+func InitEnv(o *options.ServerOptions) {
 	if v, ok := os.LookupEnv("ADDRESS"); ok {
-		err := options.ServerOpt.Net.Set(v)
+		err := (*o).Net.Set(v)
 		if err != nil {
 			log.Printf("Error while set server network address: %s\n", err.Error())
 		}

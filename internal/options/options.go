@@ -8,44 +8,26 @@ import (
 )
 
 type NetAddress struct {
-	host string	
-	port int
+	Host string	
+	Port int
 }
 
 
-type agentOptions struct {
+type AgentOptions struct {
 	Net NetAddress
-	reportInterval int		`env:"REPORT_INTERVAL"`
-	pollInterval int		`env:"POLL_INTERVAL"`
-}
-
-var AgentOpt agentOptions = agentOptions{
-	Net: NetAddress{
-		host: "localhost",
-		port: 8080,
-	},
-	reportInterval: 10,
-	pollInterval: 2,
+	ReportInterval int		`env:"REPORT_INTERVAL"`
+	PollInterval int		`env:"POLL_INTERVAL"`
 }
 
 
-
-
-type serverOptions struct {
+type ServerOptions struct {
 	Net NetAddress
-}
-
-var ServerOpt serverOptions = serverOptions{
-	Net: NetAddress{
-		host: "",
-		port: 8080,
-	},
 }
 
 
 
 func (n *NetAddress)String() string {
-	return n.host + ":" + fmt.Sprint(n.port)
+	return n.Host + ":" + fmt.Sprint(n.Port)
 }
 
 func (n *NetAddress)Set(s string) error {
@@ -55,8 +37,8 @@ func (n *NetAddress)Set(s string) error {
 	}
 
 	if v, err := strconv.Atoi(vals[1]); err == nil {
-		n.host = vals[0]
-		n.port = v
+		n.Host = vals[0]
+		n.Port = v
 	} else {
 		return errors.New("wrong port value")
 	}
@@ -65,28 +47,28 @@ func (n *NetAddress)Set(s string) error {
 }
 
 
-func (a *agentOptions)SetPolInt(v int) error {
+func (a *AgentOptions)SetPolInt(v int) error {
 	if v > 0 {
-		a.pollInterval = v
+		a.PollInterval = v
 	} else {
 		return errors.New("wrong value of poll interval")
 	}
 	return nil
 }
 
-func (a *agentOptions)SetRepInt(v int) error {
+func (a *AgentOptions)SetRepInt(v int) error {
 	if v > 0 {
-		a.reportInterval = v
+		a.ReportInterval = v
 	} else {
 		return errors.New("wrong value of report interval")
 	}
 	return nil
 }
 
-func (a *agentOptions)GetPollInt() int {
-	return a.pollInterval
+func (a *AgentOptions)GetPollInt() int {
+	return a.PollInterval
 }
 
-func (a *agentOptions)GetRepInt() int {
-	return a.reportInterval
+func (a *AgentOptions)GetRepInt() int {
+	return a.ReportInterval
 }

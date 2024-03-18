@@ -12,21 +12,22 @@ type flagOptions struct {
 	pollInterval int		`env:"POLL_INTERVAL"`
 }
 
-func InitFlag() {
-	flags := flagOptions{}
-	_ = flag.Value(&options.AgentOpt.Net)
 
-	flag.Var(&options.AgentOpt.Net, "a", "Server net address host:port")
+func InitFlag(o *options.AgentOptions) {
+	flags := flagOptions{}
+	_ = flag.Value(&o.Net)
+
+	flag.Var(&o.Net, "a", "Server net address host:port")
 	flag.IntVar(&flags.reportInterval, "r", 10, "Send metrics to server interval sec")
 	flag.IntVar(&flags.pollInterval, "p", 2, "Update metrics interval sec")
 
 	flag.Parse()
 
-	if err := options.AgentOpt.SetPolInt(flags.pollInterval); err != nil {
+	if err := o.SetPolInt(flags.pollInterval); err != nil {
 		log.Printf("Error when applying the Polling interval: %s\n", err.Error())
 	}
 	
-	if err := options.AgentOpt.SetRepInt(flags.reportInterval); err != nil {
+	if err := o.SetRepInt(flags.reportInterval); err != nil {
 		log.Printf("Error when applying the Polling interval: %s\n", err.Error())
 	}
 	

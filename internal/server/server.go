@@ -9,7 +9,18 @@ import (
 
 
 func ServerRun() error {
-	return http.ListenAndServe(options.ServerOpt.Net.String(), ServerMux())
+	ServerOpt := options.ServerOptions{
+		Net: options.NetAddress{
+			Host: "",
+			Port: 8080,
+		},
+	}
+
+	InitFlag(&ServerOpt)
+	InitEnv(&ServerOpt)
+	
+
+	return http.ListenAndServe(ServerOpt.Net.String(), ServerMux())
 }
 
 func ServerMux() *chi.Mux {

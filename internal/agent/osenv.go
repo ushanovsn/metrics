@@ -8,11 +8,12 @@ import (
 )
 
 
-func InitEnv() {
-	_ = env.Parse(&options.AgentOpt)
+
+func InitEnv(o *options.AgentOptions) {
+	_ = env.Parse(o)
 
 	if v, ok := os.LookupEnv("ADDRESS"); ok {
-		err := options.AgentOpt.Net.Set(v)
+		err := (*o).Net.Set(v)
 		if err != nil {
 			log.Printf("Error while set agent network address: %s\n", err.Error())
 		}

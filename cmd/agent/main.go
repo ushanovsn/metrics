@@ -9,9 +9,6 @@ import (
 func main() {
 	fmt.Printf("Starting client \n")
 
-	agent.InitFlag()
-	agent.InitEnv()
-
 	if err := agent.AgentRun(); err != nil {
 		fmt.Printf("Agent stopping with error: %s\n", err)
 	}
