@@ -5,7 +5,6 @@ import (
 	"github.com/ushanovsn/metrics/internal/server"
 )
 
-
 func main() {
 	fmt.Printf("Server starting...\n")
 

@@ -1,36 +1,32 @@
 package options
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 	"strings"
-	"errors"
 )
 
 type NetAddress struct {
-	Host string	
+	Host string
 	Port int
 }
 
-
 type AgentOptions struct {
-	Net NetAddress
-	ReportInterval int		`env:"REPORT_INTERVAL"`
-	PollInterval int		`env:"POLL_INTERVAL"`
+	Net            NetAddress
+	ReportInterval int `env:"REPORT_INTERVAL"`
+	PollInterval   int `env:"POLL_INTERVAL"`
 }
-
 
 type ServerOptions struct {
 	Net NetAddress
 }
 
-
-
-func (n *NetAddress)String() string {
+func (n *NetAddress) String() string {
 	return n.Host + ":" + fmt.Sprint(n.Port)
 }
 
-func (n *NetAddress)Set(s string) error {
+func (n *NetAddress) Set(s string) error {
 	vals := strings.Split(s, ":")
 	if len(vals) != 2 {
 		return errors.New("wrong addres string")
@@ -46,8 +42,7 @@ func (n *NetAddress)Set(s string) error {
 	return nil
 }
 
-
-func (a *AgentOptions)SetPolInt(v int) error {
+func (a *AgentOptions) SetPolInt(v int) error {
 	if v > 0 {
 		a.PollInterval = v
 	} else {
@@ -56,7 +51,7 @@ func (a *AgentOptions)SetPolInt(v int) error {
 	return nil
 }
 
-func (a *AgentOptions)SetRepInt(v int) error {
+func (a *AgentOptions) SetRepInt(v int) error {
 	if v > 0 {
 		a.ReportInterval = v
 	} else {
@@ -65,10 +60,10 @@ func (a *AgentOptions)SetRepInt(v int) error {
 	return nil
 }
 
-func (a *AgentOptions)GetPollInt() int {
+func (a *AgentOptions) GetPollInt() int {
 	return a.PollInterval
 }
 
-func (a *AgentOptions)GetRepInt() int {
+func (a *AgentOptions) GetRepInt() int {
 	return a.ReportInterval
 }

@@ -1,29 +1,28 @@
 package handlers
 
 import (
-	"net/http"
+	"fmt"
+	"github.com/go-chi/chi/v5"
 	"github.com/ushanovsn/metrics/internal/rcvddataproc"
 	"github.com/ushanovsn/metrics/internal/storage"
-	"fmt"
-	"strings"
-	"github.com/go-chi/chi/v5"
 	"html/template"
 	"log"
+	"net/http"
+	"strings"
 )
 
-
-// start page 
+// start page
 func StartPage(res http.ResponseWriter, req *http.Request) {
 	header := http.StatusOK
 
 	res.Header().Add("Content-Type", "text/html")
 
-	 data := struct { 
-		Title string 
+	data := struct {
+		Title    string
 		MetricsG []string
 		MetricsC []string
 	}{
-		Title: "Metrics list",
+		Title:    "Metrics list",
 		MetricsG: storage.Metr.GetGaugeList(),
 		MetricsC: storage.Metr.GetCounterList(),
 	}
@@ -36,17 +35,16 @@ func StartPage(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-
 	res.WriteHeader(header)
 	err = tmpl.Execute(res, data)
 
 	if err != nil {
-		fmt.Println("Error executing template:", err) 
+		fmt.Println("Error executing template:", err)
 		return
 	}
 }
 
-// metric page 
+// metric page
 func GetPageM(res http.ResponseWriter, req *http.Request) {
 	var msg []byte
 	header := http.StatusNotFound
@@ -75,7 +73,7 @@ func GetPageM(res http.ResponseWriter, req *http.Request) {
 		if _, err := res.Write(msg); err != nil {
 			log.Printf("Error while write msg: %s\n", err)
 		}
-		
+
 	}
 }
 
@@ -83,7 +81,7 @@ func GetPageM(res http.ResponseWriter, req *http.Request) {
 func UpdatePageM(res http.ResponseWriter, req *http.Request) {
 	// post message if needed
 	var msg []byte
-	// default header = badRequest 
+	// default header = badRequest
 	header := http.StatusBadRequest
 
 	// check method
@@ -96,7 +94,6 @@ func UpdatePageM(res http.ResponseWriter, req *http.Request) {
 				rightContentT = false
 			}
 		}
-
 
 		if rightContentT {
 			rcvdData := []string{

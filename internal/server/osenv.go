@@ -2,10 +2,9 @@ package server
 
 import (
 	"github.com/ushanovsn/metrics/internal/options"
-	"os"
 	"log"
+	"os"
 )
-
 
 func InitEnv(o *options.ServerOptions) {
 	if v, ok := os.LookupEnv("ADDRESS"); ok {

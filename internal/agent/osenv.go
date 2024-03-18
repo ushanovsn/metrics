@@ -3,11 +3,9 @@ package agent
 import (
 	"github.com/caarlos0/env/v6"
 	"github.com/ushanovsn/metrics/internal/options"
-	"os"
 	"log"
+	"os"
 )
-
-
 
 func InitEnv(o *options.AgentOptions) {
 	_ = env.Parse(o)

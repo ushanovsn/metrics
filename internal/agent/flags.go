@@ -6,12 +6,10 @@ import (
 	"log"
 )
 
-
 type flagOptions struct {
-	reportInterval int		`env:"REPORT_INTERVAL"`
-	pollInterval int		`env:"POLL_INTERVAL"`
+	reportInterval int `env:"REPORT_INTERVAL"`
+	pollInterval   int `env:"POLL_INTERVAL"`
 }
-
 
 func InitFlag(o *options.AgentOptions) {
 	flags := flagOptions{}
@@ -26,10 +24,9 @@ func InitFlag(o *options.AgentOptions) {
 	if err := o.SetPolInt(flags.pollInterval); err != nil {
 		log.Printf("Error when applying the Polling interval: %s\n", err.Error())
 	}
-	
+
 	if err := o.SetRepInt(flags.reportInterval); err != nil {
 		log.Printf("Error when applying the Polling interval: %s\n", err.Error())
 	}
-	
-}
 
+}

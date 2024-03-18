@@ -1,19 +1,16 @@
 package agent
 
 import (
-	"log"
 	"fmt"
 	"github.com/ushanovsn/metrics/internal/options"
-	"net/http"
-	"time"
+	"log"
 	"math/rand"
+	"net/http"
 	"reflect"
 	"runtime"
 	"strings"
+	"time"
 )
-
-
-
 
 func AgentRun() error {
 	AgentOpt := options.AgentOptions{
@@ -22,7 +19,7 @@ func AgentRun() error {
 			Port: 8080,
 		},
 		ReportInterval: 10,
-		PollInterval: 2,
+		PollInterval:   2,
 	}
 
 	var err error
@@ -75,7 +72,7 @@ func AgentRun() error {
 		// waiting...
 		time.Sleep(time.Duration(sleepTime) * time.Second)
 
-		if minTimer == maxTimer ||(timer == maxTimer && maxTimer % minTimer == 0) {
+		if minTimer == maxTimer || (timer == maxTimer && maxTimer%minTimer == 0) {
 			getGauge(actualValG)
 			getCounter(actualValC)
 			if err != nil {
@@ -113,8 +110,6 @@ func AgentRun() error {
 	}
 }
 
-
-
 func agentSendMetrics(gm *map[string]float64, cm *map[string]int64, addr string) error {
 	client := &http.Client{}
 
@@ -129,7 +124,6 @@ func agentSendMetrics(gm *map[string]float64, cm *map[string]int64, addr string)
 		if err != nil {
 			return err
 		}
-		
 
 		// add header (optional)
 		r.Header.Add("Content-Type", "text/plain")
@@ -142,12 +136,10 @@ func agentSendMetrics(gm *map[string]float64, cm *map[string]int64, addr string)
 		} else {
 			resp.Body.Close()
 		}
-		
+
 	}
 	return nil
 }
-
-
 
 func getGauge(gm *map[string]float64) {
 	var rt runtime.MemStats
@@ -171,7 +163,7 @@ func getGauge(gm *map[string]float64) {
 		}
 	}
 
-	(*gm)["RandomValue"] =  rand.Float64()
+	(*gm)["RandomValue"] = rand.Float64()
 }
 
 func getCounter(cm *map[string]int64) {
@@ -180,9 +172,8 @@ func getCounter(cm *map[string]int64) {
 	}
 }
 
-
 func initGaugeValues() *map[string]float64 {
-	metricsNames := []string{"Alloc", "BuckHashSys", "Frees", "GCCPUFraction", "GCSys", "HeapAlloc", "HeapIdle", "HeapInuse", "HeapObjects", "HeapReleased", "HeapSys", "LastGC", "Lookups", "MCacheInuse", "MCacheSys", "MSpanInuse", "MSpanSys", "Mallocs", "NextGC", "NumForcedGC", "NumGC",  "OtherSys", "PauseTotalNs", "StackInuse", "StackSys", "Sys", "TotalAlloc",}
+	metricsNames := []string{"Alloc", "BuckHashSys", "Frees", "GCCPUFraction", "GCSys", "HeapAlloc", "HeapIdle", "HeapInuse", "HeapObjects", "HeapReleased", "HeapSys", "LastGC", "Lookups", "MCacheInuse", "MCacheSys", "MSpanInuse", "MSpanSys", "Mallocs", "NextGC", "NumForcedGC", "NumGC", "OtherSys", "PauseTotalNs", "StackInuse", "StackSys", "Sys", "TotalAlloc"}
 	gm := make(map[string]float64)
 	for _, n := range metricsNames {
 		gm[n] = 0.0
@@ -191,7 +182,7 @@ func initGaugeValues() *map[string]float64 {
 }
 
 func initCounterValues() *map[string]int64 {
-	metricsNames := []string{"PollCount",}
+	metricsNames := []string{"PollCount"}
 	cm := make(map[string]int64)
 	for _, n := range metricsNames {
 		cm[n] = 0.0
@@ -199,22 +190,19 @@ func initCounterValues() *map[string]int64 {
 	return &cm
 }
 
-
 func metricsToList(gm *map[string]float64, cm *map[string]int64) []string {
-	list := make([]string, 0, len(*gm) + len(*cm))
+	list := make([]string, 0, len(*gm)+len(*cm))
 	var elem strings.Builder
 
 	for t, v := range *gm {
 		elem.WriteString("/" + t + "/" + fmt.Sprint(v))
 		list = append(list, elem.String())
 	}
-	
 
 	for t, v := range *cm {
 		elem.WriteString("/" + t + "/" + fmt.Sprint(v))
 		list = append(list, elem.String())
 	}
-	
+
 	return list
 }
-

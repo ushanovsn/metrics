@@ -5,7 +5,6 @@ import (
 	"github.com/ushanovsn/metrics/internal/options"
 )
 
-
 func InitFlag(o *options.ServerOptions) {
 	_ = flag.Value(&o.Net)
 
@@ -13,4 +12,3 @@ func InitFlag(o *options.ServerOptions) {
 
 	flag.Parse()
 }
-

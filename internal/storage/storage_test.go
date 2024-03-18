@@ -212,7 +212,7 @@ func TestMemStorage_GetGaugeList(t *testing.T) {
 			name: "test get empty",
 			ms: MemStorage{
 				metrics: metrics{
-					gauge:   map[string]float64 {},
+					gauge:   map[string]float64{},
 					counter: make(map[string]int64),
 				},
 			},
@@ -222,7 +222,7 @@ func TestMemStorage_GetGaugeList(t *testing.T) {
 			name: "test get list",
 			ms: MemStorage{
 				metrics: metrics{
-					gauge:   map[string]float64{"tstgg1": 1.003, "tstgg2": 1.004,"tstgg3": 5.0},
+					gauge:   map[string]float64{"tstgg1": 1.003, "tstgg2": 1.004, "tstgg3": 5.0},
 					counter: make(map[string]int64),
 				},
 			},
@@ -254,7 +254,7 @@ func TestMemStorage_GetCounterList(t *testing.T) {
 			ms: MemStorage{
 				metrics: metrics{
 					gauge:   make(map[string]float64),
-					counter: map[string]int64 {},
+					counter: map[string]int64{},
 				},
 			},
 			want: []string{},
@@ -264,7 +264,7 @@ func TestMemStorage_GetCounterList(t *testing.T) {
 			ms: MemStorage{
 				metrics: metrics{
 					gauge:   make(map[string]float64),
-					counter: map[string]int64{"tstgg1": 1, "tstgg2": 4,"tstgg3": 5},
+					counter: map[string]int64{"tstgg1": 1, "tstgg2": 4, "tstgg3": 5},
 				},
 			},
 			want: []string{

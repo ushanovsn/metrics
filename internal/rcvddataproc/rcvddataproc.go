@@ -1,10 +1,10 @@
 package rcvddataproc
 
 import (
-	"github.com/ushanovsn/metrics/internal/storage"
 	"fmt"
-	"strings"
+	"github.com/ushanovsn/metrics/internal/storage"
 	"strconv"
+	"strings"
 )
 
 // error enums
@@ -17,12 +17,12 @@ const (
 	ProcWrongName
 )
 
-// process data, what received by HTTP POST 
+// process data, what received by HTTP POST
 func UsePOSTData(post []string) ProcError {
 	fmt.Printf("Received POST: %v\n", post)
 
 	procErr := ProcNoErrors
-	
+
 	if len(post) == 3 {
 		mType := post[0]
 		mName := post[1]
@@ -51,7 +51,7 @@ func UsePOSTData(post []string) ProcError {
 			default:
 				procErr = ProcWrongType
 			}
-		
+
 		}
 
 	} else if len(post) == 2 {
