@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{.Title}}</title>
+</head>
+<body>
+    <h1>{{ .Title}}</h1>
+    <b><i>Gauge</i></b>
+    <ul>
+        {{range .MetricsG}}
+            <li>{{ . }}</li>
+        {{end}}
+    </ul>
+    <b><i>Counter</i></b>
+    <ul>
+        {{range .MetricsC}}
+            <li>{{ . }}</li>
+        {{end}}
+    </ul>
+</body>
+</html>
