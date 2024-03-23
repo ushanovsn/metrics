@@ -6,9 +6,13 @@ import (
 )
 
 func main() {
+	fmt.Printf("Server init...\n")
+
+	srv := server.ServerInit()
+
 	fmt.Printf("Server starting...\n")
 
-	if err := server.ServerRun(); err != nil {
+	if err := server.ServerRun(srv); err != nil {
 		fmt.Printf("Server stopping with error: %s\n", err)
 	}
 

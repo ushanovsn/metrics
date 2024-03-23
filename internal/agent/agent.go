@@ -12,15 +12,22 @@ import (
 	"time"
 )
 
-func AgentRun() error {
-	AgentOpt := options.AgentOptions{
-		Net: options.NetAddress{
-			Host: "localhost",
-			Port: 8080,
-		},
-		ReportInterval: 10,
-		PollInterval:   2,
+type agentData struct {
+	opt options.AgentOptions
+}
+
+func AgentInit() *agentData {
+	agentOpt := options.InitAg()
+
+	InitFlag(agentOpt)
+	InitEnv(agentOpt)
+
+	return &agentData{
+		opt: *agentOpt,
 	}
+}
+
+func AgentRun(ag *agentData) error {
 
 	var err error
 	var timer int
@@ -29,15 +36,12 @@ func AgentRun() error {
 	var minTimer int
 	var maxTimer int
 
-	InitFlag(&AgentOpt)
-	InitEnv(&AgentOpt)
-
 	actualValG := initGaugeValues()
 
 	actualValC := initCounterValues()
 
-	repInt := AgentOpt.GetRepInt()
-	pollInt := AgentOpt.GetPollInt()
+	repInt := ag.opt.GetRepInt()
+	pollInt := ag.opt.GetPollInt()
 
 	log.Printf("Agent run with poll interval %v and report interval %v\n", pollInt, repInt)
 
@@ -79,7 +83,7 @@ func AgentRun() error {
 				return err
 			}
 
-			err = agentSendMetrics(actualValG, actualValC, AgentOpt.Net.String())
+			err = agentSendMetrics(actualValG, actualValC, ag.opt.Net.String())
 			if err != nil {
 				return err
 			}
@@ -91,7 +95,7 @@ func AgentRun() error {
 					getGauge(actualValG)
 					getCounter(actualValC)
 				} else {
-					err = agentSendMetrics(actualValG, actualValC, AgentOpt.Net.String())
+					err = agentSendMetrics(actualValG, actualValC, ag.opt.Net.String())
 				}
 			} else {
 				// tick of maxTimer
@@ -99,7 +103,7 @@ func AgentRun() error {
 					getGauge(actualValG)
 					getCounter(actualValC)
 				} else {
-					err = agentSendMetrics(actualValG, actualValC, AgentOpt.Net.String())
+					err = agentSendMetrics(actualValG, actualValC, ag.opt.Net.String())
 				}
 			}
 
@@ -113,11 +117,13 @@ func AgentRun() error {
 func agentSendMetrics(gm *map[string]float64, cm *map[string]int64, addr string) error {
 	client := &http.Client{}
 
-	//log.Printf("send: %v\n", metricscollector.GetMetricsList())
+	//log.Printf("address: %v\n", addr)
+	//log.Printf("send: %v\n", metricsToList(gm, cm))
 
 	for _, val := range metricsToList(gm, cm) {
 
-		log.Printf("* send path: %s\n", val)
+		//log.Printf("* send path: %s\n", val)
+		//log.Printf("* POST: %s\n", fmt.Sprintf("http://%s/update%s", addr, val))
 
 		// POST request with metric
 		r, err := http.NewRequest("POST", fmt.Sprintf("http://%s/update%s", addr, val), nil)
@@ -195,13 +201,15 @@ func metricsToList(gm *map[string]float64, cm *map[string]int64) []string {
 	var elem strings.Builder
 
 	for t, v := range *gm {
-		elem.WriteString("/" + t + "/" + fmt.Sprint(v))
+		elem.WriteString("/gauge/" + t + "/" + fmt.Sprint(v))
 		list = append(list, elem.String())
+		elem.Reset()
 	}
 
 	for t, v := range *cm {
-		elem.WriteString("/" + t + "/" + fmt.Sprint(v))
+		elem.WriteString("/counter/" + t + "/" + fmt.Sprint(v))
 		list = append(list, elem.String())
+		elem.Reset()
 	}
 
 	return list

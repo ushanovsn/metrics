@@ -6,9 +6,13 @@ import (
 )
 
 func main() {
-	fmt.Printf("Starting client \n")
+	fmt.Printf("Agent init...\n")
 
-	if err := agent.AgentRun(); err != nil {
+	agnt := agent.AgentInit()
+
+	fmt.Printf("Agent starting...\n")
+
+	if err := agent.AgentRun(agnt); err != nil {
 		fmt.Printf("Agent stopping with error: %s\n", err)
 	}
 

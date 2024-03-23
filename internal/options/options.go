@@ -22,6 +22,27 @@ type ServerOptions struct {
 	Net NetAddress
 }
 
+func initNetParam() *NetAddress {
+	return &NetAddress{
+		Host: "localhost",
+		Port: 8080,
+	}
+}
+
+func InitAg() *AgentOptions {
+	return &AgentOptions{
+		Net:            *initNetParam(),
+		ReportInterval: 10,
+		PollInterval:   2,
+	}
+}
+
+func InitSrv() *ServerOptions {
+	return &ServerOptions{
+		Net: *initNetParam(),
+	}
+}
+
 func (n *NetAddress) String() string {
 	return n.Host + ":" + fmt.Sprint(n.Port)
 }

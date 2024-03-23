@@ -18,7 +18,7 @@ const (
 )
 
 // process data, what received by HTTP POST
-func UsePOSTData(post []string) ProcError {
+func UsePOSTData(post []string, repo *storage.Repositories) ProcError {
 	fmt.Printf("Received POST: %v\n", post)
 
 	procErr := ProcNoErrors
@@ -36,14 +36,14 @@ func UsePOSTData(post []string) ProcError {
 			switch strings.ToLower(mType) {
 			case "gauge":
 				if v, err := strconv.ParseFloat(mVal, 64); err == nil {
-					storage.Metr.SetGauge(mName, v)
+					(*repo).SetGauge(mName, v)
 					//fmt.Printf("Received gauge: %s, value: %v\n", mName, v)
 				} else {
 					procErr = ProcWrongValue
 				}
 			case "counter":
 				if v, err := strconv.ParseInt(mVal, 10, 64); err == nil {
-					storage.Metr.SetCounter(mName, v)
+					(*repo).SetCounter(mName, v)
 					//fmt.Printf("Received counter: %s, value: %v\n", mName, v)
 				} else {
 					procErr = ProcWrongValue
