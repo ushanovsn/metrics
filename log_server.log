@@ -1,0 +1,290 @@
+[INFO]: 2024-03-24 23:49:50 - Request. Method: POST, URI: /update/gauge/Frees/190, Duration: 578µs
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/LastGC/0, Duration: 262.9µs
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/BuckHashSys/9958, Duration: 549µs
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/HeapReleased/3.366912e+06, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/NextGC/4.194304e+06, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/NumForcedGC/0, Duration: 507.6µs
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/StackInuse/131072, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/HeapIdle/3.366912e+06, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/MCacheInuse/9344, Duration: 542.1µs
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/Mallocs/1383, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/PauseTotalNs/0, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/TotalAlloc/246168, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/OtherSys/957074, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/Sys/6.836224e+06, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/RandomValue/0.22359583333236463, Duration: 565.4µs
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/StackSys/131072, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/HeapInuse/696320, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/HeapObjects/1193, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/HeapSys/4.063232e+06, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/MCacheSys/16352, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/MSpanInuse/24640, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/NumGC/0, Duration: 500.1µs
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/Alloc/246168, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/GCCPUFraction/0, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/GCSys/1.625896e+06, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/Lookups/0, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/HeapAlloc/246168, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/gauge/MSpanSys/32640, Duration: 255.7µs
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:49:51 - Request. Method: POST, URI: /update/counter/PollCount/5, Duration: 0s
+[INFO]: 2024-03-24 23:49:51 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/BuckHashSys/9958, Duration: 541.5µs
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/HeapIdle/2.277376e+06, Duration: 510.1µs
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/NumGC/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/Lookups/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/NextGC/4.194304e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/NumForcedGC/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/OtherSys/743378, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/Alloc/793664, Duration: 508.2µs
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/Frees/783, Duration: 506.2µs
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/GCSys/1.823272e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/HeapSys/3.997696e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/MSpanSys/48960, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/MSpanInuse/45120, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/MCacheInuse/9344, Duration: 783.1µs
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/RandomValue/0.8807329064702486, Duration: 509.8µs
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/HeapInuse/1.72032e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/LastGC/0, Duration: 240.8µs
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/MCacheSys/16352, Duration: 96.4µs
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/StackInuse/196608, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/StackSys/196608, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/Sys/6.836224e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/TotalAlloc/793664, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/GCCPUFraction/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/HeapAlloc/793664, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/HeapReleased/2.21184e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/HeapObjects/7462, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/Mallocs/8245, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/gauge/PauseTotalNs/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:13 - Request. Method: POST, URI: /update/counter/PollCount/10, Duration: 0s
+[INFO]: 2024-03-24 23:52:13 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/Alloc/1.057008e+06, Duration: 499.8µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/Frees/1137, Duration: 547.4µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/GCSys/1.854112e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/HeapSys/3.997696e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/MSpanSys/48960, Duration: 479.4µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/MSpanInuse/45120, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/MCacheInuse/9344, Duration: 51µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/RandomValue/0.9063176079769255, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/HeapInuse/1.949696e+06, Duration: 521.2µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/LastGC/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/MCacheSys/16352, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/StackInuse/196608, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/StackSys/196608, Duration: 54.4µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/Sys/7.098368e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/TotalAlloc/1.057008e+06, Duration: 501µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/GCCPUFraction/0, Duration: 223µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/HeapAlloc/1.057008e+06, Duration: 23.1µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/HeapReleased/1.982464e+06, Duration: 102.8µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/HeapObjects/9719, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/Mallocs/10856, Duration: 77.1µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/PauseTotalNs/0, Duration: 500.6µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/BuckHashSys/9958, Duration: 500µs
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/HeapIdle/2.048e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/NumGC/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/Lookups/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/NextGC/4.194304e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/NumForcedGC/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/gauge/OtherSys/974682, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:23 - Request. Method: POST, URI: /update/counter/PollCount/15, Duration: 0s
+[INFO]: 2024-03-24 23:52:23 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/HeapReleased/1.892352e+06, Duration: 485.4µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/GCCPUFraction/0, Duration: 590.9µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/HeapAlloc/1.239368e+06, Duration: 589.3µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/PauseTotalNs/0, Duration: 404.4µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/HeapObjects/11826, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/Mallocs/13311, Duration: 499.4µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/NumGC/0, Duration: 466µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/BuckHashSys/9958, Duration: 364.2µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/HeapIdle/1.892352e+06, Duration: 588.5µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/NumForcedGC/0, Duration: 527.7µs
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/OtherSys/962346, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/Lookups/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/NextGC/4.194304e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/GCSys/1.866448e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/HeapSys/3.997696e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/MSpanSys/48960, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/Alloc/1.239368e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/Frees/1485, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/MSpanInuse/45120, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/MCacheInuse/9344, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/MCacheSys/16352, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/StackInuse/196608, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/StackSys/196608, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/Sys/7.098368e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/TotalAlloc/1.239368e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/RandomValue/0.18045408043322847, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/HeapInuse/2.105344e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/gauge/LastGC/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:33 - Request. Method: POST, URI: /update/counter/PollCount/20, Duration: 0s
+[INFO]: 2024-03-24 23:52:33 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/Lookups/0, Duration: 489.1µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/NextGC/4.194304e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/NumForcedGC/0, Duration: 550.7µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/OtherSys/946026, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/Alloc/1.42176e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/Frees/1833, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/GCSys/1.866448e+06, Duration: 518.1µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/HeapSys/3.997696e+06, Duration: 508.5µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/MSpanSys/65280, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/MSpanInuse/55360, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/MCacheInuse/9344, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/HeapInuse/2.269184e+06, Duration: 506.6µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/LastGC/0, Duration: 30.9µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/MCacheSys/16352, Duration: 429.2µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/StackInuse/196608, Duration: 347.3µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/StackSys/196608, Duration: 499.8µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/Sys/7.098368e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/TotalAlloc/1.42176e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/RandomValue/0.506002241695689, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/GCCPUFraction/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/HeapAlloc/1.42176e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/HeapReleased/1.728512e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/HeapObjects/13933, Duration: 173.6µs
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/Mallocs/15766, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/PauseTotalNs/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/BuckHashSys/9958, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/HeapIdle/1.728512e+06, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/gauge/NumGC/0, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0
+[INFO]: 2024-03-24 23:52:43 - Request. Method: POST, URI: /update/counter/PollCount/25, Duration: 0s
+[INFO]: 2024-03-24 23:52:43 - Response. StatusCode: 200, RespSize: 0

@@ -16,5 +16,7 @@ func main() {
 		fmt.Printf("Agent stopping with error: %s\n", err)
 	}
 
+	agent.AgentStop(agnt)
+
 	fmt.Printf("Agent stopped!\n")
 }

@@ -3,13 +3,42 @@ package handlers
 import (
 	"fmt"
 	"github.com/go-chi/chi/v5"
+	"github.com/sirupsen/logrus"
 	"github.com/ushanovsn/metrics/internal/rcvddataproc"
 	"github.com/ushanovsn/metrics/internal/storage"
 	"html/template"
-	"log"
 	"net/http"
 	"strings"
+	"time"
 )
+
+type responseData struct {
+	sCode int
+	size  int
+}
+
+type loggingResponseWriter struct {
+	http.ResponseWriter
+	resp *responseData
+}
+
+func RespLogging(h http.Handler, l *logrus.Logger) http.HandlerFunc {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		start := time.Now()
+		rd := &responseData{}
+
+		lw := loggingResponseWriter{
+			ResponseWriter: w,
+			resp:           rd,
+		}
+
+		h.ServeHTTP(&lw, r)
+
+		l.Infof("Request. Method: %s, URI: %s, Duration: %s\n", r.Method, r.RequestURI, time.Since(start))
+		l.Infof("Response. StatusCode: %d, RespSize: %d\n", rd.sCode, rd.size)
+
+	})
+}
 
 // start page
 func StartPage(repo *storage.Repositories) http.HandlerFunc {
@@ -75,7 +104,7 @@ func GetPageM(repo *storage.Repositories) http.HandlerFunc {
 
 			if len(msg) > 0 {
 				if _, err := w.Write(msg); err != nil {
-					log.Printf("Error while write msg: %s\n", err)
+					fmt.Printf("Error while write msg: %s\n", err)
 				}
 
 			}
@@ -140,4 +169,16 @@ func UpdatePageM(repo *storage.Repositories) http.HandlerFunc {
 			fmt.Printf("http msg: %s\n", msg)
 		}
 	})
+}
+
+func (r *loggingResponseWriter) Write(b []byte) (int, error) {
+	size, err := r.ResponseWriter.Write(b)
+	r.resp.size += size // захватываем размер
+	return size, err
+}
+
+func (r *loggingResponseWriter) WriteHeader(statusCode int) {
+	// записываем код статуса, используя оригинальный http.ResponseWriter
+	r.ResponseWriter.WriteHeader(statusCode)
+	r.resp.sCode = statusCode // захватываем код статуса
 }

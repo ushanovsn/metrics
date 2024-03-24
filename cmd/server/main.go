@@ -16,5 +16,7 @@ func main() {
 		fmt.Printf("Server stopping with error: %s\n", err)
 	}
 
+	server.ServerStop(srv)
+
 	fmt.Printf("Server stopped!\n")
 }

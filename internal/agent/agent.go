@@ -2,8 +2,8 @@ package agent
 
 import (
 	"fmt"
+	"github.com/ushanovsn/metrics/internal/logger"
 	"github.com/ushanovsn/metrics/internal/options"
-	"log"
 	"math/rand"
 	"net/http"
 	"reflect"
@@ -20,7 +20,14 @@ func AgentInit() *agentData {
 	agentOpt := options.InitAg()
 
 	InitFlag(agentOpt)
-	InitEnv(agentOpt)
+	envErr := InitEnv(agentOpt)
+
+	logger.InitLogger(&agentOpt.Logger)
+	log := agentOpt.Logger.GetLogger()
+
+	if envErr != nil {
+		log.Errorf("Error when parsing environment var: %s\n", envErr)
+	}
 
 	return &agentData{
 		opt: *agentOpt,
@@ -36,6 +43,8 @@ func AgentRun(ag *agentData) error {
 	var minTimer int
 	var maxTimer int
 
+	log := ag.opt.Logger.GetLogger()
+
 	actualValG := initGaugeValues()
 
 	actualValC := initCounterValues()
@@ -43,7 +52,7 @@ func AgentRun(ag *agentData) error {
 	repInt := ag.opt.GetRepInt()
 	pollInt := ag.opt.GetPollInt()
 
-	log.Printf("Agent run with poll interval %v and report interval %v\n", pollInt, repInt)
+	log.Debugf("Agent run with poll interval %v and report interval %v\n", pollInt, repInt)
 
 	if repInt < pollInt {
 		minTimer = repInt
@@ -83,7 +92,7 @@ func AgentRun(ag *agentData) error {
 				return err
 			}
 
-			err = agentSendMetrics(actualValG, actualValC, ag.opt.Net.String())
+			err = agentSendMetrics(actualValG, actualValC, ag)
 			if err != nil {
 				return err
 			}
@@ -95,7 +104,7 @@ func AgentRun(ag *agentData) error {
 					getGauge(actualValG)
 					getCounter(actualValC)
 				} else {
-					err = agentSendMetrics(actualValG, actualValC, ag.opt.Net.String())
+					err = agentSendMetrics(actualValG, actualValC, ag)
 				}
 			} else {
 				// tick of maxTimer
@@ -103,7 +112,7 @@ func AgentRun(ag *agentData) error {
 					getGauge(actualValG)
 					getCounter(actualValC)
 				} else {
-					err = agentSendMetrics(actualValG, actualValC, ag.opt.Net.String())
+					err = agentSendMetrics(actualValG, actualValC, ag)
 				}
 			}
 
@@ -114,19 +123,16 @@ func AgentRun(ag *agentData) error {
 	}
 }
 
-func agentSendMetrics(gm *map[string]float64, cm *map[string]int64, addr string) error {
+func agentSendMetrics(gm *map[string]float64, cm *map[string]int64, ag *agentData) error {
 	client := &http.Client{}
-
-	//log.Printf("address: %v\n", addr)
-	//log.Printf("send: %v\n", metricsToList(gm, cm))
+	log := ag.opt.Logger.GetLogger()
 
 	for _, val := range metricsToList(gm, cm) {
 
-		//log.Printf("* send path: %s\n", val)
-		//log.Printf("* POST: %s\n", fmt.Sprintf("http://%s/update%s", addr, val))
+		log.Debugf("* POST: %s\n", fmt.Sprintf("http://%s/update%s", ag.opt.Net.String(), val))
 
 		// POST request with metric
-		r, err := http.NewRequest("POST", fmt.Sprintf("http://%s/update%s", addr, val), nil)
+		r, err := http.NewRequest("POST", fmt.Sprintf("http://%s/update%s", ag.opt.Net.String(), val), nil)
 		if err != nil {
 			return err
 		}
@@ -138,7 +144,7 @@ func agentSendMetrics(gm *map[string]float64, cm *map[string]int64, addr string)
 		resp, err := client.Do(r)
 
 		if err != nil {
-			log.Printf("error while requesting: \"%s\"\n", err)
+			log.Errorf("Error while POST executing: \"%s\"\n", err)
 		} else {
 			resp.Body.Close()
 		}
@@ -213,4 +219,11 @@ func metricsToList(gm *map[string]float64, cm *map[string]int64) []string {
 	}
 
 	return list
+}
+
+func AgentStop(ag *agentData) {
+	err := ag.opt.Logger.Stop()
+	if err != nil {
+		fmt.Printf("Error while stopping Agent: %s\n", err)
+	}
 }
