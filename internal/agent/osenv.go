@@ -3,17 +3,18 @@ package agent
 import (
 	"github.com/caarlos0/env/v6"
 	"github.com/ushanovsn/metrics/internal/options"
-	"log"
 	"os"
 )
 
-func InitEnv(o *options.AgentOptions) {
+func InitEnv(o *options.AgentOptions) error {
 	_ = env.Parse(o)
+	_ = env.Parse(o.Logger)
 
 	if v, ok := os.LookupEnv("ADDRESS"); ok {
 		err := (*o).Net.Set(v)
 		if err != nil {
-			log.Printf("Error while set agent network address: %s\n", err.Error())
+			return err
 		}
 	}
+	return nil
 }

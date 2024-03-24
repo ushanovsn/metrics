@@ -3,6 +3,8 @@ package options
 import (
 	"errors"
 	"fmt"
+	"github.com/sirupsen/logrus"
+	"os"
 	"strconv"
 	"strings"
 )
@@ -12,14 +14,55 @@ type NetAddress struct {
 	Port int
 }
 
+type LoggerOpt struct {
+	FileName string `env:"AGENT_LOG_FILE_NAME"`
+	Level    string `env:"LOG_LEVEL"`
+	Report   bool   `env:"LOG_REPORT"`
+	file     *os.File
+	logger   *logrus.Logger
+}
+
 type AgentOptions struct {
 	Net            NetAddress
 	ReportInterval int `env:"REPORT_INTERVAL"`
 	PollInterval   int `env:"POLL_INTERVAL"`
+	Logger         LoggerOpt
 }
 
 type ServerOptions struct {
-	Net NetAddress
+	Net    NetAddress
+	Logger LoggerOpt
+}
+
+func initNetParam() *NetAddress {
+	return &NetAddress{
+		Host: "localhost",
+		Port: 8080,
+	}
+}
+
+func InitAg() *AgentOptions {
+	return &AgentOptions{
+		Net:            *initNetParam(),
+		ReportInterval: 10,
+		PollInterval:   2,
+		Logger: LoggerOpt{
+			FileName: "log_agent",
+			Level:    "debug",
+			Report:   true,
+		},
+	}
+}
+
+func InitSrv() *ServerOptions {
+	return &ServerOptions{
+		Net: *initNetParam(),
+		Logger: LoggerOpt{
+			FileName: "log_server",
+			Level:    "debug",
+			Report:   true,
+		},
+	}
 }
 
 func (n *NetAddress) String() string {
@@ -66,4 +109,23 @@ func (a *AgentOptions) GetPollInt() int {
 
 func (a *AgentOptions) GetRepInt() int {
 	return a.ReportInterval
+}
+
+func (log *LoggerOpt) GetLogger() *logrus.Logger {
+	return log.logger
+}
+
+func (log *LoggerOpt) Stop() error {
+	if log.file != nil {
+		return log.file.Close()
+	}
+	return nil
+}
+
+func (log *LoggerOpt) SetFile(f *os.File) {
+	log.file = f
+}
+
+func (log *LoggerOpt) SetLogger(l *logrus.Logger) {
+	log.logger = l
 }

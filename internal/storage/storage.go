@@ -24,14 +24,8 @@ type Repositories interface {
 	SetCounter(string, int64)
 	GetGauge(string) (float64, bool)
 	GetCounter(string) (int64, bool)
-}
-
-// init metric storage (at this time)
-var Metr MemStorage = MemStorage{
-	metrics: metrics{
-		gauge:   make(map[string]float64),
-		counter: make(map[string]int64),
-	},
+	GetGaugeList() []string
+	GetCounterList() []string
 }
 
 // add or update of gauge metric
@@ -74,4 +68,13 @@ func (ms *MemStorage) GetCounterList() []string {
 	}
 	sort.Strings(sort.StringSlice(list))
 	return list
+}
+
+func Init() Repositories {
+	return &MemStorage{
+		metrics: metrics{
+			gauge:   make(map[string]float64),
+			counter: make(map[string]int64),
+		},
+	}
 }

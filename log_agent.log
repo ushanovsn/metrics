@@ -1,0 +1,204 @@
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapObjects/1203": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/MCacheInuse/9344": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/NumGC/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Alloc/249792": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/GCCPUFraction/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/BuckHashSys/9958": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/GCSys/1.638232e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapReleased/3.334144e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/NumForcedGC/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapIdle/3.334144e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/NextGC/4.194304e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/PauseTotalNs/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/StackInuse/131072": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/TotalAlloc/249792": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/MSpanInuse/24640": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Sys/6.57408e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/RandomValue/0.2664515752078065": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapInuse/729088": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/LastGC/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Lookups/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/StackSys/131072": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Frees/193": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapAlloc/249792": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/MCacheSys/16352": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Mallocs/1396": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:24 - Error while POST executing: "Post "http://localhost:8080/update/gauge/OtherSys/682594": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:25 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapSys/4.063232e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:25 - Error while POST executing: "Post "http://localhost:8080/update/gauge/MSpanSys/32640": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[ERROR]: 2024-03-24 23:51:25 - Error while POST executing: "Post "http://localhost:8080/update/counter/PollCount/5": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:51:53 - Agent run with poll interval 2 and report interval 10
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/HeapObjects/2443
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapObjects/2443": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/Mallocs/2641
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Mallocs/2641": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/PauseTotalNs/0
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/PauseTotalNs/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/BuckHashSys/9958
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/BuckHashSys/9958": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/HeapIdle/3.293184e+06
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapIdle/3.293184e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/NumGC/0
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/NumGC/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/Lookups/0
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Lookups/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/NextGC/4.194304e+06
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/NextGC/4.194304e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/NumForcedGC/0
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/NumForcedGC/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/OtherSys/651754
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/OtherSys/651754": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/Alloc/301920
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Alloc/301920": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/Frees/198
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Frees/198": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/GCSys/1.669072e+06
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/GCSys/1.669072e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/HeapSys/4.063232e+06
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapSys/4.063232e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/MSpanSys/32640
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/MSpanSys/32640": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/MSpanInuse/24640
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/MSpanInuse/24640": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/MCacheInuse/9344
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/MCacheInuse/9344": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/Sys/6.57408e+06
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/Sys/6.57408e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/TotalAlloc/301920
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/TotalAlloc/301920": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/RandomValue/0.4179740297601329
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/RandomValue/0.4179740297601329": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/HeapInuse/770048
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapInuse/770048": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/LastGC/0
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/LastGC/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/MCacheSys/16352
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/MCacheSys/16352": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/StackInuse/131072
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/StackInuse/131072": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/StackSys/131072
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/StackSys/131072": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/GCCPUFraction/0
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/GCCPUFraction/0": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/HeapAlloc/301920
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapAlloc/301920": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/gauge/HeapReleased/3.293184e+06
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/gauge/HeapReleased/3.293184e+06": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:03 - * POST: http://localhost:8080/update/counter/PollCount/5
+[ERROR]: 2024-03-24 23:52:03 - Error while POST executing: "Post "http://localhost:8080/update/counter/PollCount/5": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it."
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/BuckHashSys/9958
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/HeapIdle/2.277376e+06
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/NumGC/0
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/Lookups/0
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/NextGC/4.194304e+06
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/NumForcedGC/0
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/OtherSys/743378
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/Alloc/793664
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/Frees/783
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/GCSys/1.823272e+06
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/HeapSys/3.997696e+06
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/MSpanSys/48960
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/MSpanInuse/45120
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/MCacheInuse/9344
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/RandomValue/0.8807329064702486
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/HeapInuse/1.72032e+06
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/LastGC/0
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/MCacheSys/16352
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/StackInuse/196608
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/StackSys/196608
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/Sys/6.836224e+06
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/TotalAlloc/793664
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/GCCPUFraction/0
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/HeapAlloc/793664
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/HeapReleased/2.21184e+06
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/HeapObjects/7462
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/Mallocs/8245
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/gauge/PauseTotalNs/0
+[DEBUG]: 2024-03-24 23:52:13 - * POST: http://localhost:8080/update/counter/PollCount/10
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/Alloc/1.057008e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/Frees/1137
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/GCSys/1.854112e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/HeapSys/3.997696e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/MSpanSys/48960
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/MSpanInuse/45120
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/MCacheInuse/9344
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/RandomValue/0.9063176079769255
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/HeapInuse/1.949696e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/LastGC/0
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/MCacheSys/16352
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/StackInuse/196608
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/StackSys/196608
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/Sys/7.098368e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/TotalAlloc/1.057008e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/GCCPUFraction/0
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/HeapAlloc/1.057008e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/HeapReleased/1.982464e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/HeapObjects/9719
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/Mallocs/10856
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/PauseTotalNs/0
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/BuckHashSys/9958
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/HeapIdle/2.048e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/NumGC/0
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/Lookups/0
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/NextGC/4.194304e+06
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/NumForcedGC/0
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/gauge/OtherSys/974682
+[DEBUG]: 2024-03-24 23:52:23 - * POST: http://localhost:8080/update/counter/PollCount/15
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/HeapReleased/1.892352e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/GCCPUFraction/0
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/HeapAlloc/1.239368e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/PauseTotalNs/0
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/HeapObjects/11826
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/Mallocs/13311
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/NumGC/0
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/BuckHashSys/9958
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/HeapIdle/1.892352e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/NumForcedGC/0
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/OtherSys/962346
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/Lookups/0
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/NextGC/4.194304e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/GCSys/1.866448e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/HeapSys/3.997696e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/MSpanSys/48960
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/Alloc/1.239368e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/Frees/1485
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/MSpanInuse/45120
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/MCacheInuse/9344
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/MCacheSys/16352
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/StackInuse/196608
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/StackSys/196608
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/Sys/7.098368e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/TotalAlloc/1.239368e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/RandomValue/0.18045408043322847
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/HeapInuse/2.105344e+06
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/gauge/LastGC/0
+[DEBUG]: 2024-03-24 23:52:33 - * POST: http://localhost:8080/update/counter/PollCount/20
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/Lookups/0
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/NextGC/4.194304e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/NumForcedGC/0
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/OtherSys/946026
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/Alloc/1.42176e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/Frees/1833
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/GCSys/1.866448e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/HeapSys/3.997696e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/MSpanSys/65280
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/MSpanInuse/55360
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/MCacheInuse/9344
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/HeapInuse/2.269184e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/LastGC/0
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/MCacheSys/16352
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/StackInuse/196608
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/StackSys/196608
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/Sys/7.098368e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/TotalAlloc/1.42176e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/RandomValue/0.506002241695689
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/GCCPUFraction/0
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/HeapAlloc/1.42176e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/HeapReleased/1.728512e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/HeapObjects/13933
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/Mallocs/15766
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/PauseTotalNs/0
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/BuckHashSys/9958
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/HeapIdle/1.728512e+06
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/gauge/NumGC/0
+[DEBUG]: 2024-03-24 23:52:43 - * POST: http://localhost:8080/update/counter/PollCount/25
